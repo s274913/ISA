@@ -1,0 +1,12 @@
+variable clock "14.52"
+
+sh vcd2saif -input ../vcd/filter.vcd -output ../saif/filter.saif
+
+create_clock -name my_clk -period $clock clk
+
+read_verilog -netlist ../netlist/filter.v
+read_saif -input ../saif/filter.saif -instance tb_fir/UUT -unit ns -scale 1 
+
+sh mkdir  clock_$clock
+report_power > clock_$clock/report_power.txt
+report_area > clock_$clock/report_area_Verilog.txt

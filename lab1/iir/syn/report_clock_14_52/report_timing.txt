@@ -1,0 +1,89 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : filter
+Version: O-2018.06-SP4
+Date   : Wed Oct 28 16:52:37 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: a1[3] (input port clocked by my_clk)
+  Endpoint: tmpDout_reg[7]
+            (rising edge-triggered flip-flop clocked by my_clk)
+  Path Group: my_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  filter             5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock my_clk (rise edge)                                0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.50       0.50 f
+  a1[3] (in)                                              0.00       0.50 f
+  mult_90/b[3] (filter_DW_mult_tc_0)                      0.00       0.50 f
+  mult_90/U185/ZN (INV_X1)                                0.04       0.54 r
+  mult_90/U181/Z (XOR2_X1)                                0.19       0.73 r
+  mult_90/U238/ZN (NAND2_X1)                              0.11       0.84 f
+  mult_90/U195/ZN (OAI22_X1)                              0.08       0.92 r
+  mult_90/U39/S (HA_X1)                                   0.08       1.00 r
+  mult_90/U38/S (FA_X1)                                   0.12       1.12 f
+  mult_90/U271/ZN (AOI222_X1)                             0.13       1.25 r
+  mult_90/U270/ZN (OAI222_X1)                             0.07       1.31 f
+  mult_90/U10/CO (FA_X1)                                  0.10       1.41 f
+  mult_90/U9/CO (FA_X1)                                   0.09       1.50 f
+  mult_90/U8/CO (FA_X1)                                   0.09       1.59 f
+  mult_90/U7/CO (FA_X1)                                   0.09       1.68 f
+  mult_90/U6/CO (FA_X1)                                   0.09       1.77 f
+  mult_90/U5/S (FA_X1)                                    0.13       1.90 r
+  mult_90/product[12] (filter_DW_mult_tc_0)               0.00       1.90 r
+  sub_92/B[5] (filter_DW01_sub_0)                         0.00       1.90 r
+  sub_92/U10/ZN (INV_X1)                                  0.02       1.92 f
+  sub_92/U2_5/CO (FA_X1)                                  0.10       2.02 f
+  sub_92/U2_6/S (FA_X1)                                   0.16       2.18 r
+  sub_92/DIFF[6] (filter_DW01_sub_0)                      0.00       2.18 r
+  mult_93/a[6] (filter_DW_mult_tc_1)                      0.00       2.18 r
+  mult_93/U265/ZN (XNOR2_X1)                              0.07       2.25 r
+  mult_93/U262/ZN (OAI22_X1)                              0.04       2.30 f
+  mult_93/U36/S (FA_X1)                                   0.14       2.44 r
+  mult_93/U35/S (FA_X1)                                   0.11       2.56 f
+  mult_93/U203/ZN (AOI222_X1)                             0.11       2.67 r
+  mult_93/U164/ZN (INV_X1)                                0.03       2.69 f
+  mult_93/U9/CO (FA_X1)                                   0.09       2.78 f
+  mult_93/U8/CO (FA_X1)                                   0.09       2.87 f
+  mult_93/U7/CO (FA_X1)                                   0.09       2.96 f
+  mult_93/U6/CO (FA_X1)                                   0.09       3.06 f
+  mult_93/U5/CO (FA_X1)                                   0.09       3.15 f
+  mult_93/U4/CO (FA_X1)                                   0.09       3.24 f
+  mult_93/U3/CO (FA_X1)                                   0.09       3.33 f
+  mult_93/U185/Z (XOR2_X1)                                0.07       3.40 f
+  mult_93/U184/ZN (XNOR2_X1)                              0.06       3.46 f
+  mult_93/product[14] (filter_DW_mult_tc_1)               0.00       3.46 f
+  add_97/A[7] (filter_DW01_add_0)                         0.00       3.46 f
+  add_97/U1_7/S (FA_X1)                                   0.14       3.60 r
+  add_97/SUM[7] (filter_DW01_add_0)                       0.00       3.60 r
+  tmpDout_reg[7]/D (DFFR_X1)                              0.01       3.60 r
+  data arrival time                                                  3.60
+
+  clock my_clk (rise edge)                               14.52      14.52
+  clock network delay (ideal)                             0.00      14.52
+  clock uncertainty                                      -0.07      14.45
+  tmpDout_reg[7]/CK (DFFR_X1)                             0.00      14.45 r
+  library setup time                                     -0.03      14.42
+  data required time                                                14.42
+  --------------------------------------------------------------------------
+  data required time                                                14.42
+  data arrival time                                                 -3.60
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.81
+
+
+1

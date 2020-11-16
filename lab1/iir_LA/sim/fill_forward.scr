@@ -1,0 +1,26 @@
+#setting env
+
+rm -rf ../sim/work
+vlib work
+
+# compile
+
+vcom -93 -work ./work ../tb/clk_gen.vhd
+vcom -93 -work ./work ../tb/data_maker_new.vhd
+vcom -93 -work ./work ../tb/data_sink.vhd
+vcom -93 -work ./work ../src/shift.vhd
+vcom -93 -work ./work ../src/reg.vhd
+vcom -93 -work ./work ../src/reg_en.vhd
+
+vlog -work ./work ../netlist/filter.v
+vlog -work ./work ../tb/tb_fir.v
+
+vsim -L /software/dk/nangate45/verilog/msim6.2g -sdftyp /tb_fir/UUT=../netlist/filter.sdf work.tb_fir
+
+#create sdf
+
+vcd file ../vcd/filter.vcd
+vcd add /tb_fir/UUT/*
+
+# run simulation
+run 3 ms
