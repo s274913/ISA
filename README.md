@@ -1,2 +1,2 @@
 # ISA
-Repository of the lab file for the group 40
+Repository of the lab files for the group 40
